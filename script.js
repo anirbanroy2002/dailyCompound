@@ -20,3 +20,18 @@ function calculate()
     }
     result.scrollIntoView();
 }
+
+let scrollTop = document.getElementById("scrollToTop");
+window.onscroll = ()=> {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    scrollTop.style.display = "block";
+  } else {
+    scrollTop.style.display = "none";
+  }
+}
+
+scrollTop.addEventListener("click", () =>
+{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});

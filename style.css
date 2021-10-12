@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 #backgroundImg{
     left:0;
     top:0;
@@ -89,4 +92,13 @@ h1 > img{
     }
     .day{
         margin-left:5px;
+    }
+    #scrollToTop{
+        bottom: 20px;
+        right: 30px;
+        display: none;
+        position: fixed;
+        cursor: pointer;
+        z-index: 4;
+        border-radius: 4px;
     }
