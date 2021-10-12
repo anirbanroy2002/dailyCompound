@@ -13,8 +13,8 @@ function calculate()
         result.insertAdjacentHTML("beforeend", "<div class='month'> Month "+i+"</div><br>")
         for (let j = 1; j <= 30; j++)
         {
-        initialInvestment*=1+rate/100.0;
-           result.insertAdjacentHTML("beforeend", "<div class='day'> Day "+(30*(i-1)+j)+": "+initialInvestment.toFixed(2)+"</div><br>") 
+            result.insertAdjacentHTML("beforeend", "<div class='day'> Day " + (30 * (i - 1) + j) + ": " + initialInvestment.toFixed(2) + "</div><br>");
+            initialInvestment*=1+rate/100.0;
         }
     }
     window.location.hash = "#output";

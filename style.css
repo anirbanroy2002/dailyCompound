@@ -59,7 +59,8 @@ h1 > img{
         background-color: rgba(255,255,255,0.5);
         border: 0;
         border-radius: 5px;
-        padding:10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     #output{
         overflow-x: auto;;
