@@ -38,6 +38,7 @@ h1 > img{
 }
 #calculate{
     padding:25px;
+    overflow-x: hidden;
     background-color: limegreen;
     color: white;
     border-radius: 50px;
