@@ -19,11 +19,15 @@
     z-index: 3;
 }
 #input{
+    max-width: 800px;
     text-align: center;
     margin-top: 30px;
 }
 h1{
     text-align: center;
+}
+h1 > img{
+    height: 200px;
 }
 
 *{
@@ -49,18 +53,17 @@ h1{
         outline: none;
     }
     input[type="number"]{
+        text-align: center;
         outline: none;
         background-color: rgba(255,255,255,0.5);
         border: 0;
         border-radius: 5px;
-        padding: 10px;
+        padding:10px;
     }
     #output{
+        overflow-x: auto;;
         margin-top: 30px;
         text-align: left;
-        overflow-y: auto;
-        width: 800px;
-        height: 300px;
         background-color: rgba(255,255,255,0.5);
     }
     #overlay{

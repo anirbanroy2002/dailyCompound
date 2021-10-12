@@ -16,5 +16,6 @@ function calculate()
         initialInvestment*=1+rate/100.0;
            result.insertAdjacentHTML("beforeend", "<div class='day'> Day "+(30*(i-1)+j)+": "+initialInvestment.toFixed(2)+"</div><br>") 
         }
-        }
+    }
+    window.location.hash = "#output";
 }
