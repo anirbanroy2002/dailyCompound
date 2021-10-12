@@ -17,6 +17,8 @@
     transform: translateX(-50%);
     position: absolute;
     z-index: 3;
+    left:0;
+    top:0;
 }
 #input{
     max-width: 800px;
