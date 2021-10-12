@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Compound Interest Calculator</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#ffb900">
+    <style>
+        html{
+    scroll-behavior: smooth;
+}
+#backgroundImg{
+    left:0;
+    top:0;
+    position: fixed;
+    background-image: url(https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+#main{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 3;
+    left:0;
+    top:0;
+}
+#input{
+    max-width: 800px;
+    text-align: center;
+    margin-top: 30px;
+}
+h1{
+    text-align: center;
+}
+h1 > img{
+    height: 200px;
+}
+
+*{
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 300;
+    font-size: 30px;
+    user-select: none;
+}
+#calculate{
+    padding:25px;
+    overflow-x: hidden;
+    background-color: limegreen;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    }
+    
+    #calculate:active{
+        transform: translateY(3px);
+        box-shadow: 0px 0px 0px;
+        background: green;
+        outline: none;
+    }
+    input[type="number"]{
+        text-align: center;
+        outline: none;
+        background-color: rgba(255,255,255,0.5);
+        border: 0;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #output{
+        overflow-x: auto;;
+        margin-top: 30px;
+        text-align: left;
+        background-color: rgba(255,255,255,0.5);
+    }
+    #overlay{
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color:limegreen;
+        opacity: 0.25;
+        z-index: 2;
+    }
+    .month{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-left: 5px;
+    }
+    .day{
+        margin-left:5px;
+    }
+    #scrollToTop{
+        bottom: 20px;
+        right: 30px;
+        display: none;
+        position: fixed;
+        cursor: pointer;
+        z-index: 4;
+        border-radius: 4px;
+    }
+    #whyOffline{
+        z-index: 4;
+        background-color: white ;
+        position: fixed;
+        width: fit-content;
+        text-align: center;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+<body>
+    <div id="whyOffline">Y U OFFLINE, MATE? 🐶</div>
+    <div id="backgroundImg"></div>
+    <div id="overlay">
+    </div>
+    <div id="main">
+    <h1>
+        <img src="doge.png">
+        <br>
+       🚀 Moon Pls! 🚀
+    </h1>
+    <div id="input">
+        <input type="number" id="amount" step="0.01" placeholder="Initial Investment">
+        <br><br>
+        <input type="number" id="rate" step="0.01" placeholder="Daily Interest %">
+        <br><br>
+        <input type="number" id="months" placeholder="Months">
+        <br><br>
+        <button id="calculate">CALCULATE</button>
+    </div>
+    <div id="output"></div>
+    </div>
+    <div id="scrollToTop"><img src="backtoTop.png"></div>
+
+    <script>
+        let calculateButton = document.getElementById("calculate");
+calculateButton.addEventListener("click", calculate);
+function calculate()
+    {
+    let initialInvestment = parseInt(document.getElementById("amount").value);
+    let rate = document.getElementById("rate").value;
+    let months = document.getElementById("months").value;
+    let result = document.getElementById("output");
+    result.innerHTML = "";
+
+    for(let i = 1; i <= months; i++)
+    {
+        result.insertAdjacentHTML("beforeend", "<div class='month'> Month "+i+"</div><br>")
+        for (let j = 1; j <= 30; j++)
+        {
+            result.insertAdjacentHTML("beforeend", "<div class='day'> Day " + (30 * (i - 1) + j) + ": " + initialInvestment.toFixed(2) + "</div><br>");
+            initialInvestment*=1+rate/100.0;
+            
+        }
+    }
+    result.scrollIntoView();
+}
+
+let scrollTop = document.getElementById("scrollToTop");
+window.onscroll = ()=> {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    scrollTop.style.display = "block";
+  } else {
+    scrollTop.style.display = "none";
+  }
+}
+
+scrollTop.addEventListener("click", () =>
+{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+    </script>
+</body>
+</html>
