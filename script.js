@@ -18,5 +18,5 @@ function calculate()
             
         }
     }
-    window.location.hash = "#output";
+    result.scrollIntoView();
 }
