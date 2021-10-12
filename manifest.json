@@ -1,0 +1,18 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "anirbanroy2002.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "anirbanroy2002.github",
+  "start_url": "/",
+  "theme_color": "#ffb900",
+  "icons": [
+    {
+      "src": "images/16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ]
+}
