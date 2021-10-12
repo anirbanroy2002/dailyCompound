@@ -1,0 +1,85 @@
+#backgroundImg{
+    left:0;
+    top:0;
+    position: fixed;
+    background-image: url(https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+#main{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 3;
+}
+#input{
+    text-align: center;
+    margin-top: 30px;
+}
+h1{
+    text-align: center;
+}
+
+*{
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 300;
+    font-size: 30px;
+    user-select: none;
+}
+#calculate{
+    padding:25px;
+    background-color: limegreen;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    }
+    
+    #calculate:active{
+        transform: translateY(3px);
+        box-shadow: 0px 0px 0px;
+        background: green;
+        outline: none;
+    }
+    input[type="number"]{
+        outline: none;
+        background-color: rgba(255,255,255,0.5);
+        border: 0;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    #output{
+        margin-top: 30px;
+        text-align: left;
+        overflow-y: auto;
+        width: 800px;
+        height: 300px;
+        background-color: rgba(255,255,255,0.5);
+    }
+    #overlay{
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color:limegreen;
+        opacity: 0.25;
+        z-index: 2;
+    }
+    .month{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-left: 5px;
+    }
+    .day{
+        margin-left:5px;
+    }
